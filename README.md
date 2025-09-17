@@ -41,8 +41,7 @@ To use the script on a system with a POSIX-compliant shell, take the `optimize.s
 (From now on referred to as the "POSIX" script.)
 
 If neither of the above are the case and the system somehow supports PowerShell Core, the `optimize.bat` script is a
-valid PowerShell script, however it will not support arguments directly.  
-The argument string will need to be placed in the `$GSOPTI_OPTIONS` environment variable.
+valid PowerShell script.
 
 
 General Requirements
