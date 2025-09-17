@@ -1,0 +1,72 @@
+# Auto-generated default config
+#
+# This file both serves as a template for custom options and as the default
+# options for `optimze.sh` and `optimize.bat`.
+#
+# WARNING: This file will be overwritten if the `/GENCONFIG` `--gen-config`
+#          option is supplied to the script.
+#          No more than a single backup will be kept when this happens.
+
+
+#=============================== OPTION CONFIGS ===============================#
+# These control the default options the script uses when it is executed.
+# The options set in this config file are always overwritten by any command-line
+# options provided to the script.
+# Not all options are editable from this config either because it would not make
+# sense for them to be editable or because they do not accept a value in the
+# first place.
+
+# Should png textures be optimized?
+# BOOLEAN [Default: true]
+textures=true
+
+# What level of optimization should be performed on textures?
+#   1: Quick optimization    2: Standard optimization
+#   3: High optimization     4: Best optimization
+# INTEGER (1-4) [Default: 2]
+level=2
+
+# Should ogg sounds be optimized?
+# BOOLEAN [Default: true]
+sounds=true
+
+# Should files be backed up before optimization?
+# BOOLEAN [Default: true]
+backup=true
+
+# Should Git features be disabled?
+# BOOLEAN [Default: false]
+nogit=false
+
+# Should debug information be printed?
+# BOOLEAN [Default: false]
+verbose=false
+
+# Should files be left untouched, only printing what would have happened?
+# BOOLEAN [Default: false]
+dry=false
+
+
+#================================= FILE RULES =================================#
+# These control what files are always included or always excluded when the
+# script is searching for files to optimize.
+#
+# Including or excluding a file the script cannot optimize is pointless.
+#
+# Lines starting with a + are inclusions, these files are always optimized.
+# If Git features are enabled, these files will also be restaged if it makes
+# sense to do so.
+# Directories can *NOT* be included.
+# Here are some examples:
+# + ./resource/bar.png
+# + ./important_sounds/noise.ogg
+#
+# Lines starting with a - are exclusions, these files are always ignored.
+# Directories can be excluded as well.
+# Here are some examples:
+# - ./refs/character_sheet.png
+# - ./template.png
+# - ./unused_sound.ogg
+# - ./useless_directory/
+
+

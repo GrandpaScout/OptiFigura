@@ -1,0 +1,7 @@
+# Sandbox files
+sandbox/
+
+# Opticonfig testing
+.opticonfig
+.opticonfig.bak
+default.opticonfig.bak
