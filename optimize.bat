@@ -1,5 +1,5 @@
 <# :
-: $optimizeavatar
+: $optifigura
 
 @ECHO OFF
 GOTO :PS1Loader
@@ -1429,7 +1429,7 @@ list of files it optimizes. If the config does not exist, it will be created
 when the script next runs. Use the ``/GENCONFIG`` switch to only generate the
 config and do nothing else.
 
-(c) 2025 Grandpa Scout
+OptiFigura (c) 2025 Grandpa Scout
 Oxipng (c) 2016 Joshua Holmer
 PNGOUT (c) 2015 Ken Silverman
 OptiVorbis (c) 2022 Alejandro González
@@ -1760,7 +1760,7 @@ exit 0
 
 
 ########################################################################################################################
-#####  LICENSE INFORMATION: THIS SCRIPT  ###############################################################################
+#####  LICENSE INFORMATION: OPTIFIGURA (THIS SCRIPT)  ##################################################################
 ########################################################################################################################
 
 # MIT License

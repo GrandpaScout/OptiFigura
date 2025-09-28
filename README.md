@@ -1,4 +1,5 @@
-# <p align=center>Unnamed Avatar Optimization Script
+# <p align=center>OptiFigura
+### <p align=center>A script for optimizing the assets of Figura avatars
 &nbsp;
 
 Introduction
@@ -20,12 +21,11 @@ Blockbench, the primary tool to make models for Figura avatars, does not attempt
 leaving them as 32-bit RGBA textures even if a grayscale, paletted, or RGB (no A) texture would be better.
 
 Sounds are the less common of the larger files but that doesn't mean they are any smaller. Audio is very complex to
-store which results in very large files. Anything longer than 2 seconds is usually too much for an avatar to store.  
+store which results in very large files. Anything longer than 2 seconds is usually too much for an avatar to reasonably
+store.  
 While not much can be done to reduce sizes without lowering the quality of the sound, many sound files might not store
-the sound optimally, leading to space that shouldn't be used or contain useless headers and comments that an avatar does
-not require to play the sound successfully.
-
-Those large files can be optimized, lowering their overall size without sacrificing quality.  
+the sound optimally or contain useless headers and comments that an avatar does not require to play the sound
+properly.  
 &nbsp;
 
 
@@ -180,7 +180,7 @@ Config File
 -----------
 The config file (`.opticonfig` by default) is used to handle default options and file inclusions/exclusions.
 
-Running the script with the `/GENCONFIG` `--gen-config` option will make the script generate a default config file named
+Running the script with the `/GENCONFIG`|`--gen-config` option will make the script generate a default config file named
 `.opticonfig` without doing anything else.
 
 The default config file can be found in this repository as `default.opticonfig`.  
@@ -194,7 +194,7 @@ Exit Codes:
 - `0`: Success.
 - `1`: Generic error.
 - `2`: Missing required shell command.
-- `3`: Option caused the script to do nothing to files. (--help, --dry, --gen-config, etc.)  
+- `3`: Option caused the script to do nothing to files. (`/?`|`-help`, `/D`|`--dry`, etc.)  
   &nbsp;
 
 
@@ -215,5 +215,5 @@ License
 =======
 This script is open-source and distributed under the MIT license.
 
-The tools used by this script are subject to thier own licenses. License information for those tools can be found at the
+The tools used by this script are subject to their own licenses. License information for those tools can be found at the
 bottom of either script file.

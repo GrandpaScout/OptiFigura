@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-: $optimizeavatar
+: $optifigura
 
 : || (
   @ECHO OFF & GOTO :Win
@@ -1588,7 +1588,7 @@ only way to configure it if used as a hook.
   fi
 
   printf "%s" "\
-(c) 2025 Grandpa Scout
+OptiFigura (c) 2025 Grandpa Scout
 Oxipng (c) 2016 Joshua Holmer
 PNGOUT (c) 2015 Ken Silverman
 OptiVorbis (c) 2022 Alejandro Gonzalez
@@ -1946,7 +1946,7 @@ exit 0
 
 
 ########################################################################################################################
-#####  LICENSE INFORMATION: THIS SCRIPT  ###############################################################################
+#####  LICENSE INFORMATION: OPTIFIGURA (THIS SCRIPT)  ##################################################################
 ########################################################################################################################
 
 # MIT License
