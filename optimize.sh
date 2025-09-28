@@ -15,7 +15,7 @@
 #
 # This file should not be edited by the end user (most likely you.)
 
-SCRIPT_VERSION="1.0.0"
+SCRIPT_VERSION="1.0.1"
 
 
 #===============================================|| DEPENDENCY CHECKS ||================================================#

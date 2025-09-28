@@ -28,9 +28,8 @@ GOTO :PS1Loader
 using namespace System.Collections
 using namespace System.Collections.Generic
 using namespace System.Globalization
-using namespace System.Management.Automation
 
-[SemanticVersion] $SCRIPT_VERSION = "1.0.0"
+[Version] $SCRIPT_VERSION = "1.0.1"
 
 
 #===================================================|| PS1 LOADER ||===================================================#
@@ -76,7 +75,7 @@ class OptHandlerOption {
   [object] $extra1 = $null
   [object] $extra2 = $null
   [ScriptBlock] $callback = $null
-  [ushort] $handled = 0
+  [uint16] $handled = 0
 }
 
 class OptHandlerHandledOption {
@@ -543,11 +542,11 @@ class OptHandler {
   #   The error message if a failure occurred.
   static [nullable[uint32]] checkEnum([string] $option_name, [string] $string, [string[]] $values, [bool] $icase) {
     if ($icase) {
-      for ([uint] $i = 0; $i -lt $values.Count; $i++) {
+      for ([uint32] $i = 0; $i -lt $values.Count; $i++) {
         if ($string -ieq $values[$i]) {return $i}
       }
     } else {
-      for ([uint] $i = 0; $i -lt $values.Count; $i++) {
+      for ([uint32] $i = 0; $i -lt $values.Count; $i++) {
         if ($string -ceq $values[$i]) {return $i}
       }
     }
