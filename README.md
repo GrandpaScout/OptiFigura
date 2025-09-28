@@ -1,5 +1,5 @@
-# <p align=center>OptiFigura
-### <p align=center>A script for optimizing the assets of Figura avatars
+# <p align=center> ![](./assets/icon128.png)<br>OptiFigura
+### <p align=center> A Figura avatar asset optimizer.
 &nbsp;
 
 Introduction
