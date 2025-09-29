@@ -1831,7 +1831,7 @@ if $CONFIG_backup; then
     if ! dry cp -f "$file" "$file.bak"; then
       echo "\
   +--------------------------------------------------------------------------+
-  |   /!\       COULD NOT CREATE A BACKUP!                             /!\   |
+  |   /!\                  COULD NOT CREATE A BACKUP!                  /!\   |
   | Backups are enabled and a backup for a file could not be created. This   |
   | script will now stop to protect any files that were about to be changed. |
   +--------------------------------------------------------------------------+\
@@ -1907,7 +1907,7 @@ if ! $CONFIG_nogit; then
     echo "\
   +--------------------------------------------------------------------------+
   |   /!\                   COULD NOT RESTAGE FILES!                   /!\   |
-  | One of the optimzed files could not be restaged. This script will now    |
+  | One of the optimized files could not be restaged. This script will now   |
   | stop to avoid committing the wrong version of the optimized files.       |
   +--------------------------------------------------------------------------+\
 " >&2

@@ -1662,7 +1662,7 @@ if ($CONFIG.backup) {
     if ($LASTEXITCODE -ne 0) {
       [Console]::Error.WriteLine(@"
   +--------------------------------------------------------------------------+
-  |   /!\       COULD NOT CREATE A BACKUP!                             /!\   |
+  |   /!\                  COULD NOT CREATE A BACKUP!                  /!\   |
   | Backups are enabled and a backup for a file could not be created. This   |
   | script will now stop to protect any files that were about to be changed. |
   +--------------------------------------------------------------------------+
@@ -1739,7 +1739,7 @@ if (-not $CONFIG.nogit) {
     [Console]::Error.WriteLine(@"
   +--------------------------------------------------------------------------+
   |   /!\                   COULD NOT RESTAGE FILES!                   /!\   |
-  | One of the optimzed files could not be restaged. This script will now    |
+  | One of the optimized files could not be restaged. This script will now   |
   | stop to avoid committing the wrong version of the optimized files.       |
   +--------------------------------------------------------------------------+
 "@)
