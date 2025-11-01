@@ -1293,7 +1293,7 @@ function gitFiles() {
 #
 function dirFiles() {
   foreach ($fileinfo in Get-ChildItem "." -Recurse -Include @("*.png", "*.ogg")) {
-    [string] $path = Resolve-Path (Get-ChildItem "." -Recurse -Include @("*.png", "*.ogg"))[0] -Relative
+    [string] $path = Resolve-Path $fileinfo[0] -Relative
     debug "Checking file [$path]." >$null
     if (Test-Path $path -PathType Leaf) {
       [Console]::Out.WriteLine("File [$path] was found in the current directory. Optimizing...")
