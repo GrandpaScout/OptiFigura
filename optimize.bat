@@ -29,7 +29,7 @@ using namespace System.Collections
 using namespace System.Collections.Generic
 using namespace System.Globalization
 
-[Version] $SCRIPT_VERSION = "1.0.1"
+[Version] $SCRIPT_VERSION = "1.0.2"
 
 
 #===================================================|| PS1 LOADER ||===================================================#
@@ -38,15 +38,23 @@ using namespace System.Globalization
 :PS1Loader
 SETLOCAL EnableDelayedExpansion
 SET "PWSH=powershell"
-WHERE /Q pwsh
-IF ERRORLEVEL 1 (
+IF NOT DEFINED NOPWSH (
+  WHERE /Q pwsh
+  IF ERRORLEVEL 1 (
+    WHERE /Q powershell
+    IF ERRORLEVEL 1 (
+      >&2 ECHO This script requires PowerShell to run, however it was not found on your system!
+      EXIT /B 2
+    )
+  ) ELSE (
+    SET "PWSH=pwsh"
+  )
+) ELSE (
   WHERE /Q powershell
   IF ERRORLEVEL 1 (
     >&2 ECHO This script requires PowerShell to run, however it was not found on your system!
     EXIT /B 2
   )
-) ELSE (
-  SET "PWSH=pwsh"
 )
 
 SET "HLNK=false"
@@ -1140,7 +1148,7 @@ function readConfig() {
 #
 function findProgram([string] $name, [string] $getitfrom) {
   $pathsplitter = ":"
-  if ($IsWindows) {
+  if ($IsWindows -or ($PSVersionTable.PSEdition -eq "Desktop")) {
     $name = "$name.exe"
     $pathsplitter = ";"
   }
