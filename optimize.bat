@@ -64,7 +64,7 @@ IF NOT EXIST "%~dpn0.hlnk.ps1" (
   SET "HLNK=true"
 )
 
-%PWSH% -executionpolicy remotesigned -File "%~dpn0.hlnk.ps1" %*
+%PWSH% -executionpolicy bypass -File "%~dpn0.hlnk.ps1" %*
 SET "EXITCODE=%ERRORLEVEL%"
 
 IF "%HLNK%"=="true" (
