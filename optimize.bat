@@ -1487,7 +1487,7 @@ Check bottom of the script file for full licenses.
   }
 
   try {
-    @"
+    [IO.File]::WriteAllText($CONFIG.config, @"
 # Auto-generated default config
 #
 # This file both serves as a template for custom options and as the default
@@ -1559,9 +1559,11 @@ dry=false
 # - ./unused_sound.ogg
 # - ./useless_directory/
 
-"@ >$CONFIG.config
+"@, [Text.UTF8Encoding]::new($false))
   } catch {
-    [Console]::Error.WriteLine("Could not write config to '$($CONFIG.config)'!")
+    [Console]::Error.WriteLine(
+      "Could not write config to '$($CONFIG.config)': $($_.Exception)`n$($_.ScriptStackTrace)"
+    )
     return 1
   }
 
