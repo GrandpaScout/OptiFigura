@@ -29,7 +29,7 @@ using namespace System.Collections
 using namespace System.Collections.Generic
 using namespace System.Globalization
 
-[Version] $SCRIPT_VERSION = "1.0.2"
+[Version] $SCRIPT_VERSION = "1.0.3"
 
 
 #===================================================|| PS1 LOADER ||===================================================#

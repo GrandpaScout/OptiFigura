@@ -15,7 +15,7 @@
 #
 # This file should not be edited by the end user (most likely you.)
 
-SCRIPT_VERSION="1.0.2"
+SCRIPT_VERSION="1.0.3"
 
 
 #===============================================|| DEPENDENCY CHECKS ||================================================#
@@ -28,9 +28,7 @@ for verifyCommands_cmdinfo in \
   "cp#creates backups of files" \
   "mv#applies OptiVorbis optimizations to the original file" \
   "eval#emulates array variables" \
-  "find#finds files in subdirectories" \
-  "stty#makes the terminal quiet while a choice is being selected" \
-  "dd#handles choice inputs"
+  "find#finds files in subdirectories"
 do
   verifyCommands_cmd="${verifyCommands_cmdinfo%%#*}"
   verifyCommands_desc="${verifyCommands_cmdinfo#*#}"
@@ -1126,6 +1124,23 @@ dry() {
 
 # Gives the user a yes/no choice.
 choiceYN() {
+  choice_verifyCommands_abort=false
+  for verifyCommands_cmdinfo in \
+    "stty#makes the terminal quiet while a choice is being selected" \
+    "dd#handles choice inputs"
+  do
+    choice_verifyCommands_cmd="${verifyCommands_cmdinfo%%#*}"
+    choice_verifyCommands_desc="${verifyCommands_cmdinfo#*#}"
+    if (! command -v "$verifyCommands_cmd" >/dev/null); then
+      echo "Could not find required command \`$choice_verifyCommands_cmd\`." >&2
+      echo " ($choice_verifyCommands_desc)" >&2
+      choice_verifyCommands_abort=true
+    fi
+  done
+
+  if $choice_verifyCommands_abort; then exit 2; fi
+  
+
   if $CONFIG_yes; then return 0; fi
 
   choice_msg="Confirm?"
