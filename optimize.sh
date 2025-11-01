@@ -1131,7 +1131,7 @@ choiceYN() {
   do
     choice_verifyCommands_cmd="${verifyCommands_cmdinfo%%#*}"
     choice_verifyCommands_desc="${verifyCommands_cmdinfo#*#}"
-    if (! command -v "$verifyCommands_cmd" >/dev/null); then
+    if (! command -v "$choice_verifyCommands_cmd" >/dev/null); then
       echo "Could not find required command \`$choice_verifyCommands_cmd\`." >&2
       echo " ($choice_verifyCommands_desc)" >&2
       choice_verifyCommands_abort=true
